@@ -47,7 +47,7 @@ with open(pypoll, newline='') as csvfile:
     
     print("Total Votes: " + str(totalrow))
     print("----------------------------")
-    print("Khan: " + str(percentKhan) + "% " + "(" + str(totalKhan) + ")")
+    print("Khan: " + str("{:.3f}".format(percentKhan)) + "% " + "(" + str(totalKhan) + ")")
     print("Correy: " + str(percentCorrey) + "% " + "(" + str(totalCorrey) + ")")
     print("Li: " + str(percentLi) + "% " + "(" + str(totalLi) + ")")
     print("O'Tooley: " + str(percentOtooley) + "% " + "(" + str(totalOtooley) + ")")
@@ -57,17 +57,20 @@ with open(pypoll, newline='') as csvfile:
 
 
 f=open('PyPoll.txt', 'w')
-f.write(
-    "Election Results"
-    "----------------------------" 
-    "Total Votes: 3521001" 
-    "----------------------------" 
-    "Khan: 63.000% (2218231)"
-    "Correy: 20.000% (704200)"
-    "Li: 14.000% (492940)"
-    "O'Tooley: 3.000% (105630)"
-    "----------------------------" 
-    "Winner: Khan"
-    "----------------------------" 
-)
+# f.write(
+#     "Election Results"
+#     "----------------------------" 
+#     "Total Votes: 3521001" 
+#     "----------------------------" 
+#     "Khan: 63.000% (2218231)"
+#     "Correy: 20.000% (704200)"
+#     "Li: 14.000% (492940)"
+#     "O'Tooley: 3.000% (105630)"
+#     "----------------------------" 
+#     "Winner: Khan"
+#     "----------------------------" 
+# )
+f.write("election results\n")
+f.write("----------------------------\n")
+f.write("Khan: " + str("{:.3f}".format(percentKhan)) + "% " + "(" + str(totalKhan) + ")")
 f.close()
